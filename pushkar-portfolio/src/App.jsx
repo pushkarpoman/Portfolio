@@ -1,7 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent } from "./components/ui/card";
-import { Button } from "./components/ui/button";
 import { Github, Linkedin, FileText, Instagram, Twitter, Code, User, Mail, MapPin, Phone, MessageCircle, Bot } from "lucide-react";
+
+// Card Components (inline to avoid import issues)
+const Card = ({ children, className = "" }) => (
+  <div className={`bg-white rounded-lg shadow-sm ${className}`}>
+    {children}
+  </div>
+);
+
+const CardContent = ({ children, className = "" }) => (
+  <div className={className}>
+    {children}
+  </div>
+);
+
+// Button Component (inline to avoid import issues)
+const Button = ({ children, className = "", variant = "default", onClick, ...props }) => {
+  const baseClasses = "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background";
+  const variants = {
+    default: "bg-primary text-primary-foreground hover:bg-primary/90",
+    outline: "border border-input hover:bg-accent hover:text-accent-foreground",
+  };
+  
+  return (
+    <button
+      className={`${baseClasses} ${variants[variant]} ${className}`}
+      onClick={onClick}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
 
 export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -53,9 +83,9 @@ export default function App() {
 
   const resumeContent = {
     contact: {
-      phone: "+919322408303 ",
+      phone: "+919322408303",
       email: "pushkarpoman10@gmail.com",
-      location: "Pune,Maharashtra,India"
+      location: "Pune, Maharashtra, India"
     },
     education: {
       degree: "Bachelor of Engineering in Computer Engineering",
@@ -178,73 +208,37 @@ export default function App() {
 
         <div class="section">
           <h2>EXPERIENCE</h2>
-          <div class="experience-item">
-            <strong>MERN Stack Web Developer</strong> | Edunet Foundation, Pune<br>
-            <em>January 2025 - March 2025</em>
-            <ul>
-              <li>Learned HTML, CSS, JS, NodeJS, ReactJS, Postman API</li>
-              <li>Led to enhance development skills</li>
-              <li>Developed Food delivery website</li>
-            </ul>
-            
-            <div class="tech-stack">
-              <span class="tech-item">HTML</span>
-              <span class="tech-item">CSS</span>
-              <span class="tech-item">JavaScript</span>
-              <span class="tech-item">React.js</span>
-              <span class="tech-item">Node.js</span>
-              <span class="tech-item">MongoDB</span>
+          ${experience.map(exp => `
+            <div class="experience-item">
+              <strong>${exp.title}</strong> | ${exp.company}, ${exp.location}<br>
+              <em>${exp.duration}</em>
+              <ul>
+                <li>${exp.description}</li>
+              </ul>
+              <div class="tech-stack">
+                ${exp.tech.map(tech => `<span class="tech-item">${tech}</span>`).join('')}
+              </div>
             </div>
-          </div>
-          <div class="experience-item">
-            <strong>Python Developer</strong> | Rubicon, Pune<br>
-            <em>March 2025 - April 2025</em>
-            <ul>
-              <li>Learned Python, Django, Tkinter</li>
-              <li>Developed Ecommerce website</li>
-            </ul>
-            <div class="tech-stack">
-              <span class="tech-item">Python</span>
-              <span class="tech-item">Django</span>
-              <span class="tech-item">Tkinter</span>
-            </div>
-          </div>
+          `).join('')}
         </div>
 
         <div class="section">
           <h2>PROJECTS</h2>
-          <div class="project-item">
-            <strong>Food Delivery Website (Zomato Clone)</strong>
-            <p>Full-stack food delivery application with user authentication, restaurant listings, and order management</p>
-            <div class="tech-stack">
-              <span class="tech-item">HTML</span>
-              <span class="tech-item">CSS</span>
-              <span class="tech-item">JavaScript</span>
-              <span class="tech-item">React.js</span>
-              <span class="tech-item">Node.js</span>
-              <span class="tech-item">MongoDB</span>
-              <span class="tech-item">Postman API</span>
+          ${projects.map(project => `
+            <div class="project-item">
+              <strong>${project.title}</strong>
+              <p>${project.description}</p>
+              <div class="tech-stack">
+                ${project.tech.map(tech => `<span class="tech-item">${tech}</span>`).join('')}
+              </div>
             </div>
-          </div>
-          <div class="project-item">
-            <strong>PC Builder Website</strong>
-            <p>Interactive PC configuration tool allowing users to build custom computer systems</p>
-            <div class="tech-stack">
-              <span class="tech-item">HTML</span>
-              <span class="tech-item">CSS</span>
-              <span class="tech-item">JavaScript</span>
-              <span class="tech-item">React.js</span>
-              <span class="tech-item">Node.js</span>
-              <span class="tech-item">MongoDB</span>
-            </div>
-          </div>
+          `).join('')}
         </div>
 
         <div class="section">
           <h2>ACHIEVEMENTS</h2>
           <ul>
-            <li>1st Runner up of Snapchat AR-VR Hackathon Mumbai</li>
-            <li>1st Runner up at National Level coding Hackathon RV University Bangalore</li>
+            ${achievements.map(achievement => `<li>${achievement}</li>`).join('')}
           </ul>
         </div>
 
@@ -393,7 +387,6 @@ export default function App() {
                   />
                 </div>
               </div>              
-              
             </div>
           </div>
         </section>
@@ -411,7 +404,7 @@ export default function App() {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">Professional Overview</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Currently pursuing Bachelor of Engineering in Computer Engineering at Zeal College of Engineering and Research, 
-                  affiliated with Savitribai Phule Pune University.completed my schooling and Jr collage from Muktangan English School & Jr collage(PVG) HSC & SSC. I have hands-on experience in MERN stack development 
+                  affiliated with Savitribai Phule Pune University. Completed my schooling and Jr college from Muktangan English School & Jr college(PVG) HSC & SSC. I have hands-on experience in MERN stack development 
                   and Python programming through internships at Edunet Foundation and Rubicon.
                 </p>
                 
@@ -427,14 +420,11 @@ export default function App() {
                 <div className="space-y-4">
                   <div className="border-l-4 border-blue-600 pl-4">
                     <h4 className="font-semibold text-gray-900">{resumeContent.education.degree}</h4>
-                   
                     <p className="text-gray-600">{resumeContent.education.college}</p>
                     <p className="text-gray-500">{resumeContent.education.university}</p>
-                    
                     <p className="text-sm text-gray-500">{resumeContent.education.duration}</p>
                     <h4 className="text-gray-700">HSC {resumeContent.education.hsc}</h4>
                     <h4 className="text-gray-700">SSC {resumeContent.education.ssc}</h4>
-
                   </div>
                   <div className="mt-6">
                     <h4 className="font-semibold text-gray-900 mb-2">Recent Achievements</h4>
