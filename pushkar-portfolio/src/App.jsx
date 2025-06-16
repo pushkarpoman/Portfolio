@@ -618,4 +618,6 @@ export default function App() {
     </div>
   );
 }
+
+
 // Ensure the app is responsive and accessible
