@@ -85,7 +85,7 @@ export default function App() {
     contact: {
       phone: "+919322408303",
       email: "pushkarpoman10@gmail.com",
-      location: "Pune,Maharashtra,India"
+      location: "Pune, Maharashtra, India"
     },
     education: {
       degree: "Bachelor of Engineering in Computer Engineering",
@@ -379,10 +379,14 @@ export default function App() {
               
               {/* Professional Avatar/Image */}
               <div className="flex justify-center">
-                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                  <User className="w-32 h-32 text-white opacity-80" />
+                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/profile-photo.jpg" 
+                    alt="Pushkar Poman - Professional Photo"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-              </div>
+              </div>              
             </div>
           </div>
         </section>
