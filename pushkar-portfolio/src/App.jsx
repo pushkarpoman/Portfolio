@@ -377,14 +377,10 @@ export default function App() {
                 </div>
               </div>
               
-              {/* Professional Avatar/Image */}
+              {/* Professional Avatar/Image - Temporarily replaced with placeholder */}
               <div className="flex justify-center">
-                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/profile-photo.jpg" 
-                    alt="Pushkar Poman - Professional Photo"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
+                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                  <User className="w-32 h-32 text-white" />
                 </div>
               </div>              
             </div>
@@ -613,18 +609,13 @@ export default function App() {
         </section>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white py-12">
+        <footer className="bg-gray-900 text-white py-8">
           <div className="max-w-6xl mx-auto px-6 text-center">
-            <h3 className="text-2xl font-bold mb-4">Pushkar Poman</h3>
-            <p className="text-gray-400 mb-6">Web Developer & Software Engineer</p>
-            <div className="border-t border-gray-700 pt-6">
-              <p className="text-gray-500">
-                © 2025 Pushkar Poman. Available for exciting opportunities.
-              </p>
-            </div>
+            <p className="text-sm mb-2">© 2025 Pushkar Poman. All rights reserved.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+// Ensure the app is responsive and accessible
