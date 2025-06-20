@@ -7,22 +7,7 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'terser',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          lucide: ['lucide-react']
-        }
-      }
-    }
+    minify: 'esbuild',
   },
-  base: './',
-  server: {
-    port: 3000,
-    open: true
-  },
-  preview: {
-    port: 3000
-  }
+  base: './'
 })
