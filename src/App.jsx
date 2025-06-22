@@ -85,7 +85,7 @@ export default function App() {
     contact: {
       phone: "+919322408303",
       email: "pushkarpoman10@gmail.com",
-      location: "Pune, Maharashtra, India"
+      location: "Pune,Maharashtra,India"
     },
     education: {
       degree: "Bachelor of Engineering in Computer Engineering",
@@ -199,7 +199,7 @@ export default function App() {
         <div class="section">
           <h2>TECHNICAL SKILLS</h2>
           <div style="margin-bottom: 15px;">
-            <strong>Proficient:</strong> C, C++, Java, Python, HTML, CSS, JavaScript, MERN Stack, MySQL, MongoDB, GitHub
+            <strong>Proficient:</strong> C, C++, Java, Python, HTML, CSS, JavaScript,SpringBoot, MERN Stack, MySQL, MongoDB, GitHub
           </div>
           <div>
             <strong>Familiar:</strong> Django, After Effects, Adobe Premiere Pro, AWS
@@ -377,12 +377,17 @@ export default function App() {
                 </div>
               </div>
               
-              {/* Professional Avatar/Image - Temporarily replaced with placeholder */}
+              {/* Professional Avatar/Image */}
               <div className="flex justify-center">
                 <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                  <User className="w-32 h-32 text-white" />
+                  <img
+                    src="/profile-photo.jpg" 
+                    alt="Profile"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </div>              
+              </div>
+     
             </div>
           </div>
         </section>
@@ -581,11 +586,11 @@ export default function App() {
             
             <div className="flex flex-wrap justify-center gap-6">
               {[
-                { href: "https://github.com/pushkarpoman", icon: Github, label: "GitHub", color: "hover:bg-gray-800" },
-                { href: "https://www.linkedin.com/in/pushkar-poman-b05082307/", icon: Linkedin, label: "LinkedIn", color: "hover:bg-blue-600" },
-                { href: "https://www.instagram.com/pushkarpoman/?utm_source=ig_web_button_share_sheet", icon: Instagram, label: "Instagram", color: "hover:bg-pink-600" },
-                { href: "https://x.com/PomanPushkar?t=9JbPeO85GJeVSfBDdelUJA&s=09", icon: Twitter, label: "Twitter", color: "hover:bg-blue-400" },
-                { href: "https://discord.gg/discordapp.com/users/755377738478649414", icon: Bot, label: "Discord", color: "hover:bg-indigo-600" }
+                { href: "https://github.com/pushkarpoman", icon: Github, label: "GitHub", color: "hover bg-gray-800" },
+                { href: "https://www.linkedin.com/in/pushkar-poman-b05082307/", icon: Linkedin, label: "LinkedIn", color: "hover bg-blue-600" },
+                { href: "https://www.instagram.com/pushkarpoman/?utm_source=ig_web_button_share_sheet", icon: Instagram, label: "Instagram", color: "hover bg-pink-600" },
+                { href: "https://x.com/PomanPushkar?t=9JbPeO85GJeVSfBDdelUJA&s=09", icon: Twitter, label: "Twitter", color: "hover bg-blue-400" },
+                { href: "https://discord.gg/discordapp.com/users/755377738478649414", icon: Bot, label: "Discord", color: "hover bg-indigo-600" }
               ].map((social) => (
                 <a 
                   key={social.label}
