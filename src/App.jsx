@@ -38,10 +38,10 @@ export default function App() {
 
   const skills = [
     { name: "Programming Languages", items: ["C", "C++", "Java", "Python"], icon: "💻" },
-    { name: "Web Development", items: ["HTML", "CSS", "JavaScript", "MERN Stack"], icon: "🌐" },
+    { name: "Web Development", items: ["HTML", "CSS", "JavaScript", "MERN Stack","Spring Boot"], icon: "🌐" },
     { name: "Databases", items: ["MySQL", "MongoDB"], icon: "🗄️" },
-    { name: "Tools & Platforms", items: ["GitHub", "Postman API", "AWS"], icon: "🛠️" },
-    { name: "Additional Skills", items: ["Django", "After Effects", "Adobe Premiere Pro"], icon: "🎨" }
+    { name: "Tools & Platforms", items: ["Git & GitHub", "Postman API", "AWS","MongoDB Compass"], icon: "🛠️" },
+    { name: "Additional Skills", items: ["Canva", "After Effects", "Adobe Premiere Pro"], icon: "🎨" }
   ];
 
   const experience = [
@@ -60,7 +60,16 @@ export default function App() {
       duration: "Mar 2025 - Apr 2025",
       description: "Learned Python, Django, Tkinter. Developed Ecommerce website.",
       tech: ["Python", "Django", "Tkinter"]
+    },
+    {
+      title: "Software Developer",
+      company: "Dessar Systems", 
+      location: "Pune, India",
+      duration: "July 2025 - Jan 2026",
+      description: "Maintained and developed web applications. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+      tech: ["JS", "Express.js", "Node.js", "MongoDB", "Postman API", "React.js", "HTML", "CSS",]
     }
+
   ];
 
   const projects = [
@@ -73,6 +82,11 @@ export default function App() {
       title: "PC Builder Website",
       description: "Interactive PC configuration tool allowing users to build custom computer systems",
       tech: ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "MongoDB"]
+    },
+    {
+      title: "Roadmap Generator",
+      description: "Web application that generates personalized learning roadmaps based on user input and preferences",
+      tech: ["HTML", "CSS", "JavaScript", "React.js", "Node.js","Express.js", "MongoDB"," Postman API","API Integration"]
     }
   ];
 
@@ -509,7 +523,6 @@ export default function App() {
             </div>
           </div>
         </section>
-
         {/* Projects Section */}
         <section id="projects" className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-6">
